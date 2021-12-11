@@ -54,6 +54,18 @@
       }
     }
 
+    span {
+      font-size: 8px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 999px;
+      color: var(--White);
+      background-color: var(--Orange);
+      position: relative;
+      bottom: 11px;
+      right: 8px;
+    }
+
     .avatar {
       width: 45px;
       margin: 0 35px;

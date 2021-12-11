@@ -115,9 +115,30 @@
         }
       }
 
-      & > button:hover {
-        opacity: 0.6;
-        box-shadow: -5px 10px 10px var(--Orange);
+      & > button {
+        padding: 15px 50px;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        color: var(--White);
+        border: none;
+        border-radius: 10px;
+        background-color: var(--Orange);
+        cursor: pointer;
+
+        svg {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          opacity: 0.6;
+          box-shadow: -5px 10px 10px var(--Orange);
+        }
+
+        @media (max-width: 375px) {
+          width: 100%;
+          display: block;
+        }
       }
     }
   }

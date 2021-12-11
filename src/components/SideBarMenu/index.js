@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { MyProvider } from "../../context/MyProvider";
+import { MyContext } from "../../context/MyContext";
 
 import Close from "../../assets/images/icon-close.svg";
 import styles from "./styles.module.scss";
 
 function SideBarMenu() {
-  const { activeMenu, toggleModeMenu } = useContext(MyProvider);
+  const { activeMenu, toggleModeMenu } = useContext(MyContext);
 
   return (
     <aside

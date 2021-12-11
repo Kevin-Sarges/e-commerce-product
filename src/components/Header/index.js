@@ -3,7 +3,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { Cart } from "../Cart";
 import { SideBarMenu } from "../SideBarMenu";
-import { MyProvider } from "../../context/MyProvider";
+import { MyContext } from "../../context/MyContext";
 
 import Avatar from "../../assets/images/image-avatar.png";
 import Logo from "../../assets/images/logo.svg";
@@ -12,8 +12,14 @@ import Menu from "../../assets/images/icon-menu.svg";
 import styles from "./styles.module.scss";
 
 function Header() {
-  const { activeMenu, activeCart, toggleModeMenu, toggleModeCart } =
-    useContext(MyProvider);
+  const {
+    activeMenu,
+    activeCart,
+    addedToCart,
+    cartTotal,
+    toggleModeMenu,
+    toggleModeCart,
+  } = useContext(MyContext);
 
   return (
     <header className={styles.headerContainer}>
@@ -34,6 +40,7 @@ function Header() {
 
       <div>
         <AiOutlineShoppingCart size="30" onClick={toggleModeCart} />
+        {addedToCart && <span>{cartTotal}</span>}
         {activeCart ? <Cart /> : ""}
         <img className={styles.avatar} src={Avatar} alt="Avaltar" />
       </div>

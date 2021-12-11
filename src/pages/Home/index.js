@@ -9,12 +9,12 @@ import Image04 from "../../assets/images/image-product-4-thumbnail.jpg";
 import Sdireita from "../../assets/images/icon-next.svg";
 import Sesquerda from "../../assets/images/icon-previous.svg";
 
-import { Button } from "../../components/Button";
-import { MyProvider } from "../../context/MyProvider";
+import { MyContext } from "../../context/MyContext";
 import styles from "./styles.module.scss";
 
 function Home() {
-  const { count, plusProduct, lessProduct } = useContext(MyProvider);
+  const { itemCount, plusProduct, lessProduct, addToCart } =
+    useContext(MyContext);
 
   return (
     <main className={styles.mainContainer}>
@@ -56,13 +56,13 @@ function Home() {
         <div className={styles.buttonCart}>
           <div className={styles.buttonCount}>
             <button onClick={lessProduct}>-</button>
-            {count}
+            {itemCount}
             <button onClick={plusProduct}>+</button>
           </div>
 
-          <Button>
+          <button onClick={addToCart}>
             <AiOutlineShoppingCart /> Add to cart
-          </Button>
+          </button>
         </div>
       </div>
     </main>

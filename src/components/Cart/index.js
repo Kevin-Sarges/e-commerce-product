@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { MyProvider } from "../../context/MyProvider";
+import { MyContext } from "../../context/MyContext";
 import { Button } from "../Button";
 
 import Image11 from "../../assets/images/image-product-1-thumbnail.jpg";
@@ -9,7 +9,9 @@ import Delete from "../../assets/images/icon-delete.svg";
 import styles from "./styles.module.scss";
 
 function Cart() {
-  const { activeCart, toggleModeCart } = useContext(MyProvider);
+  const { activeCart, toggleModeCart, cartTotal, deleteItem } =
+    useContext(MyContext);
+  let numberOfItem = cartTotal;
 
   return (
     <div
@@ -26,24 +28,30 @@ function Cart() {
       </header>
 
       <main>
-        <div className={styles.product}>
-          <img id={styles.imageProduct} src={Image11} alt="product" />
+        {numberOfItem === 0 ? (
+          <p id={styles.cartVoid}>Your Cart is empty</p>
+        ) : (
+          <>
+            <div className={styles.product}>
+              <img id={styles.imageProduct} src={Image11} alt="product" />
 
-          <div className={styles.text}>
-            <p>Fall Limited Edition Sneakers</p>
-            <p>
-              $125.00 x3 <b>$375.00</b>
-            </p>
-          </div>
+              <div className={styles.text}>
+                <p>Fall Limited Edition Sneakers</p>
+                <p>
+                  $125.00 x{numberOfItem}
+                  {""} <b>{`$${125 * numberOfItem}.00`}</b>
+                </p>
+              </div>
 
-          <button id={styles.delete}>
-            <img src={Delete} alt="Delte" />
-          </button>
-        </div>
+              <button id={styles.delete}>
+                <img src={Delete} alt="Delte" onClick={deleteItem} />
+              </button>
+            </div>
 
-        <Button>Checkout</Button>
+            <Button>Checkout</Button>
+          </>
+        )}
       </main>
-      {/* <p>Your Cart is empty</p> */}
     </div>
   );
 }
