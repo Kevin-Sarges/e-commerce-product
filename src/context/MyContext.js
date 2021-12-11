@@ -13,10 +13,10 @@ export const MyContext = createContext({
 export function MyProvider({ children }) {
   const [activeMenu, setActiveMenu] = useState(false);
   const [activeCart, setActiveCart] = useState(false);
-
   const [itemCount, setItemCount] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
+  const [images, setImages] = useState();
 
   function toggleModeMenu() {
     setActiveMenu(!activeMenu);
@@ -25,8 +25,6 @@ export function MyProvider({ children }) {
   function toggleModeCart() {
     setActiveCart(!activeCart);
   }
-
-  //News Functions
 
   function addItemHandler() {
     setItemCount(itemCount + 1);
@@ -50,7 +48,6 @@ export function MyProvider({ children }) {
     }
     setCartTotal(cartTotal + itemCount);
     setItemCount(0);
-    //setActiveCart(true);
   }
 
   function deleteItemHandler() {
@@ -59,6 +56,10 @@ export function MyProvider({ children }) {
     if (cartTotal <= 1) {
       setAddedToCart(false);
     }
+  }
+
+  function teste() {
+    setImages(alert("teste"));
   }
 
   const cartContext = {
@@ -74,6 +75,7 @@ export function MyProvider({ children }) {
     lessProduct: removeItemHandler,
     deleteItem: deleteItemHandler,
     addToCart: addToCartHandler,
+    teste,
   };
 
   return (

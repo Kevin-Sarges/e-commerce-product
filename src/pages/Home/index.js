@@ -1,19 +1,14 @@
 import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-import Image01 from "../../assets/images/image-product-1.jpg";
-import Image11 from "../../assets/images/image-product-1-thumbnail.jpg";
-import Image02 from "../../assets/images/image-product-2-thumbnail.jpg";
-import Image03 from "../../assets/images/image-product-3-thumbnail.jpg";
-import Image04 from "../../assets/images/image-product-4-thumbnail.jpg";
+import { MyContext } from "../../context/MyContext";
+import { imagesThumbnail, imagesBackground } from "../../utils";
 import Sdireita from "../../assets/images/icon-next.svg";
 import Sesquerda from "../../assets/images/icon-previous.svg";
-
-import { MyContext } from "../../context/MyContext";
 import styles from "./styles.module.scss";
 
 function Home() {
-  const { itemCount, plusProduct, lessProduct, addToCart } =
+  const { itemCount, plusProduct, lessProduct, addToCart, teste } =
     useContext(MyContext);
 
   return (
@@ -24,13 +19,13 @@ function Home() {
           <img src={Sdireita} alt="Imagem" />
         </div>
 
-        <img src={Image01} alt="Imagem" />
+        <img src={imagesBackground.image11} alt="Imagem" />
 
         <div className={styles.outerProduction}>
-          <img src={Image11} alt="Products" />
-          <img src={Image02} alt="Products" />
-          <img src={Image03} alt="Products" />
-          <img src={Image04} alt="Products" />
+          <img onClick={teste} src={imagesThumbnail.image01} alt="Products" />
+          <img onClick={teste} src={imagesThumbnail.image02} alt="Products" />
+          <img onClick={teste} src={imagesThumbnail.image03} alt="Products" />
+          <img onClick={teste} src={imagesThumbnail.image04} alt="Products" />
         </div>
       </div>
 
