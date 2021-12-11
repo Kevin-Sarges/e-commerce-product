@@ -1,0 +1,20 @@
+.addCart {
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--White);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--Orange);
+  cursor: pointer;
+
+  svg {
+    margin-right: 10px;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    display: block;
+  }
+}

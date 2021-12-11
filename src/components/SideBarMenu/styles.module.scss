@@ -1,0 +1,49 @@
+.sidebarContainerActive {
+  width: 100%;
+  height: 600px;
+  background-color: var(--Very-vark-blue);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  .menu {
+    width: 70%;
+    height: 100%;
+    padding: 31px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--White);
+    animation: openMenu 1s;
+
+    button {
+      margin-bottom: 50px;
+      border: none;
+      background-color: transparent;
+    }
+
+    .options {
+      list-style: none;
+
+      li {
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+    }
+
+    @keyframes openMenu {
+      from {
+        transform: translateX(-700px);
+      }
+
+      to {
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+
+.sidebarContainerHidden {
+  display: none;
+}
