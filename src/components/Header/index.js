@@ -4,10 +4,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Cart } from "../Cart";
 import { SideBarMenu } from "../SideBarMenu";
 import { MyContext } from "../../context/MyContext";
+import { icons } from "../../utils";
 
 import Avatar from "../../assets/images/image-avatar.png";
 import Logo from "../../assets/images/logo.svg";
-import Menu from "../../assets/images/icon-menu.svg";
 
 import styles from "./styles.module.scss";
 
@@ -25,7 +25,7 @@ function Header() {
     <header className={styles.headerContainer}>
       <ul className={styles.navBar}>
         <button id={styles.menu}>
-          <img src={Menu} alt="Menu" onClick={toggleModeMenu} />
+          <img src={icons.menu} alt="Menu" onClick={toggleModeMenu} />
         </button>
         <img src={Logo} alt="Logo" />
 

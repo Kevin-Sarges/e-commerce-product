@@ -1,23 +1,51 @@
-import Image11 from "../assets/images/image-product-1.jpg";
-import Image22 from "../assets/images/image-product-2.jpg";
-import Image33 from "../assets/images/image-product-3.jpg";
-import Image44 from "../assets/images/image-product-4.jpg";
+import Avatar from "../assets/images/image-avatar.png";
+import Logo from "../assets/images/logo.svg";
 
-import Image01 from "../assets/images/image-product-1-thumbnail.jpg";
-import Image02 from "../assets/images/image-product-2-thumbnail.jpg";
-import Image03 from "../assets/images/image-product-3-thumbnail.jpg";
-import Image04 from "../assets/images/image-product-4-thumbnail.jpg";
+import image11 from "../assets/images/image-product-1.jpg";
+import image22 from "../assets/images/image-product-2.jpg";
+import image33 from "../assets/images/image-product-3.jpg";
+import image44 from "../assets/images/image-product-4.jpg";
+
+import image01 from "../assets/images/image-product-1-thumbnail.jpg";
+import image02 from "../assets/images/image-product-2-thumbnail.jpg";
+import image03 from "../assets/images/image-product-3-thumbnail.jpg";
+import image04 from "../assets/images/image-product-4-thumbnail.jpg";
+
+import nextIcon from "../assets/images/icon-next.svg";
+import previousIcon from "../assets/images/icon-previous.svg";
+import closeIcon from "../assets/images/icon-close.svg";
+import deleteIcon from "../assets/images/icon-delete.svg";
+import menuIcon from "../assets/images/icon-menu.svg";
+import cartIcon from "../assets/images/icon-cart.svg";
+import minusIcon from "../assets/images/icon-minus.svg";
+import plusIcon from "../assets/images/icon-plus.svg";
+
+export const outerImages = {
+  Avatar,
+  Logo,
+};
 
 export const imagesThumbnail = {
-  image01: Image01,
-  image02: Image02,
-  image03: Image03,
-  image04: Image04,
+  image01,
+  image02,
+  image03,
+  image04,
 };
 
 export const imagesBackground = {
-  image11: Image11,
-  image22: Image22,
-  image33: Image33,
-  image44: Image44,
+  image11,
+  image22,
+  image33,
+  image44,
+};
+
+export const icons = {
+  cart: cartIcon,
+  close: closeIcon,
+  delete: deleteIcon,
+  menu: menuIcon,
+  minus: minusIcon,
+  next: nextIcon,
+  plus: plusIcon,
+  previous: previousIcon,
 };

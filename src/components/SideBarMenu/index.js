@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
+
+import { icons } from "../../utils";
 import { MyContext } from "../../context/MyContext";
 
-import Close from "../../assets/images/icon-close.svg";
 import styles from "./styles.module.scss";
 
 function SideBarMenu() {
@@ -17,7 +18,7 @@ function SideBarMenu() {
     >
       <div className={styles.menu}>
         <button onClick={toggleModeMenu}>
-          <img src={Close} alt="Fecha" />
+          <img src={icons.close} alt="Fecha" />
         </button>
 
         <ul className={styles.options}>

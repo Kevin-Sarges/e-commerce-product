@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { MyContext } from "../../context/MyContext";
-import { imagesThumbnail, imagesBackground } from "../../utils";
-import Sdireita from "../../assets/images/icon-next.svg";
-import Sesquerda from "../../assets/images/icon-previous.svg";
+import { imagesThumbnail, imagesBackground, icons } from "../../utils";
+
 import styles from "./styles.module.scss";
 
 function Home() {
@@ -15,8 +14,8 @@ function Home() {
     <main className={styles.mainContainer}>
       <div className={styles.products}>
         <div className={styles.arrow}>
-          <img src={Sesquerda} alt="Imagem" />
-          <img src={Sdireita} alt="Imagem" />
+          <img src={icons.next} alt="Imagem" />
+          <img src={icons.previous} alt="Imagem" />
         </div>
 
         <img src={imagesBackground.image11} alt="Imagem" />

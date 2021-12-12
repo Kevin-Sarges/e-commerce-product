@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 
-import { MyContext } from "../../context/MyContext";
 import { Button } from "../Button";
+import { MyContext } from "../../context/MyContext";
+import { icons, imagesThumbnail } from "../../utils";
 
-import Image11 from "../../assets/images/image-product-1-thumbnail.jpg";
-import Close from "../../assets/images/icon-close.svg";
-import Delete from "../../assets/images/icon-delete.svg";
 import styles from "./styles.module.scss";
 
 function Cart() {
@@ -23,7 +21,7 @@ function Cart() {
         <h4>Cart</h4>
 
         <button onClick={toggleModeCart}>
-          <img src={Close} alt="Fecha" />
+          <img src={icons.close} alt="Fecha" />
         </button>
       </header>
 
@@ -33,7 +31,11 @@ function Cart() {
         ) : (
           <>
             <div className={styles.product}>
-              <img id={styles.imageProduct} src={Image11} alt="product" />
+              <img
+                id={styles.imageProduct}
+                src={imagesThumbnail.image01}
+                alt="product"
+              />
 
               <div className={styles.text}>
                 <p>Fall Limited Edition Sneakers</p>
@@ -44,7 +46,7 @@ function Cart() {
               </div>
 
               <button id={styles.delete}>
-                <img src={Delete} alt="Delte" onClick={deleteItem} />
+                <img src={icons.delete} alt="Delte" onClick={deleteItem} />
               </button>
             </div>
 
