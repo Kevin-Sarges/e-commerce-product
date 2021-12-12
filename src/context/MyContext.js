@@ -1,5 +1,7 @@
 import React, { createContext, useState } from "react";
 
+import { imagesBackground } from "../utils";
+
 export const MyContext = createContext({
   itemCount: 0,
   cartTotal: 0,
@@ -16,7 +18,7 @@ export function MyProvider({ children }) {
   const [itemCount, setItemCount] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
-  const [images, setImages] = useState();
+  const [images, setImages] = useState(imagesBackground[0]);
 
   function toggleModeMenu() {
     setActiveMenu(!activeMenu);
@@ -28,10 +30,6 @@ export function MyProvider({ children }) {
 
   function addItemHandler() {
     setItemCount(itemCount + 1);
-
-    if (itemCount >= 5) {
-      setItemCount(5);
-    }
   }
 
   function removeItemHandler() {
@@ -51,15 +49,12 @@ export function MyProvider({ children }) {
   }
 
   function deleteItemHandler() {
-    setCartTotal(cartTotal - 1);
-
-    if (cartTotal <= 1) {
-      setAddedToCart(false);
-    }
+    setCartTotal(0);
+    setAddedToCart(false);
   }
 
-  function teste() {
-    setImages(alert("teste"));
+  function handleImages() {
+    setImages(imagesBackground[1]);
   }
 
   const cartContext = {
@@ -68,14 +63,14 @@ export function MyProvider({ children }) {
     itemCount,
     cartTotal,
     addedToCart,
-
+    images,
     toggleModeMenu,
     toggleModeCart,
     plusProduct: addItemHandler,
     lessProduct: removeItemHandler,
     deleteItem: deleteItemHandler,
     addToCart: addToCartHandler,
-    teste,
+    handleImages,
   };
 
   return (
