@@ -14,11 +14,16 @@ export const MyContext = createContext({
 
 export function MyProvider({ children }) {
   const [images, setImages] = useState(imagesBackground.image11);
+  const [activeModal, setActiveModal] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
   const [activeCart, setActiveCart] = useState(false);
   const [itemCount, setItemCount] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
+
+  function toggleModeModal() {
+    setActiveModal(!activeModal);
+  }
 
   function toggleModeMenu() {
     setActiveMenu(!activeMenu);
@@ -53,33 +58,16 @@ export function MyProvider({ children }) {
     setAddedToCart(false);
   }
 
-  /*
-    if (images === imagesBackground.image11) {
-      setImages(imagesBackground.image22);
-    } else if (
-      images === imagesBackground.image22 &&
-      imagesBackground.image11
-    ) {
-      setImages(imagesBackground.image33);
-    } else if (
-      images === imagesBackground.image33 &&
-      images === imagesBackground.image22 &&
-      images === imagesBackground.image11
-    ) {
-      setImages(imagesBackground.image44);
-    } else {
-      setImages(imagesBackground.image11);
-    }
-  */
-
   const cartContext = {
     images,
+    activeModal,
     activeMenu,
     activeCart,
     itemCount,
     cartTotal,
     addedToCart,
     setImages,
+    toggleModeModal,
     toggleModeMenu,
     toggleModeCart,
     plusProduct: addItemHandler,

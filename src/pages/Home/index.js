@@ -2,23 +2,32 @@ import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { MyContext } from "../../context/MyContext";
+import { ModalImages } from "../../components/ModalImages";
 import { imagesThumbnail, imagesBackground, icons } from "../../utils";
 
 import styles from "./styles.module.scss";
 
 function Home() {
-  const { images, itemCount, plusProduct, lessProduct, setImages, addToCart } =
-    useContext(MyContext);
+  const {
+    images,
+    setImages,
+    itemCount,
+    plusProduct,
+    lessProduct,
+    addToCart,
+    activeModal,
+    toggleModeModal,
+  } = useContext(MyContext);
 
   return (
     <main className={styles.mainContainer}>
       <div className={styles.products}>
         <div className={styles.arrow}>
-          <img src={icons.next} alt="Imagem" />
           <img src={icons.previous} alt="Imagem" />
+          <img src={icons.next} alt="Imagem" />
         </div>
 
-        <img src={images} alt="Imagem" />
+        <img onClick={toggleModeModal} src={images} alt="Imagem" />
 
         <div className={styles.outerProduction}>
           <img
@@ -75,6 +84,8 @@ function Home() {
           </button>
         </div>
       </div>
+
+      {activeModal ? <ModalImages /> : ""}
     </main>
   );
 }

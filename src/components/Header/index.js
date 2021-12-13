@@ -4,10 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Cart } from "../Cart";
 import { SideBarMenu } from "../SideBarMenu";
 import { MyContext } from "../../context/MyContext";
-import { icons } from "../../utils";
-
-import Avatar from "../../assets/images/image-avatar.png";
-import Logo from "../../assets/images/logo.svg";
+import { icons, outerImages } from "../../utils";
 
 import styles from "./styles.module.scss";
 
@@ -27,7 +24,7 @@ function Header() {
         <button id={styles.menu}>
           <img src={icons.menu} alt="Menu" onClick={toggleModeMenu} />
         </button>
-        <img src={Logo} alt="Logo" />
+        <img src={outerImages.Logo} alt="Logo" />
 
         <li>Collections</li>
         <li>Men</li>
@@ -42,7 +39,7 @@ function Header() {
         <AiOutlineShoppingCart size="30" onClick={toggleModeCart} />
         {addedToCart && <span>{cartTotal}</span>}
         {activeCart ? <Cart /> : ""}
-        <img className={styles.avatar} src={Avatar} alt="Avaltar" />
+        <img className={styles.avatar} src={outerImages.Avatar} alt="Avaltar" />
       </div>
     </header>
   );

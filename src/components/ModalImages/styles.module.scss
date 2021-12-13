@@ -1,0 +1,81 @@
+.modalContainerActive {
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  background: var(--Very-vark-blue);
+  z-index: 20;
+
+  #closeModal {
+    width: 20px;
+    position: absolute;
+    top: 22px;
+    right: 445px;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(120%) contrast(600%) hue-rotate(150deg) saturate(120%);
+    }
+  }
+
+  .arrowModal {
+    width: 554px;
+    margin: 120px 441px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 130px;
+    visibility: visible;
+
+    img {
+      width: 50px;
+      padding: 13px 17px;
+      background: var(--White);
+      border-radius: 999px;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(400%) contrast(100%) hue-rotate(150deg)
+          saturate(400%);
+      }
+    }
+  }
+
+  #imageProduct {
+    width: 35%;
+    height: 70%;
+    margin-top: 50px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .outerProductionModal {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 70px;
+      margin: 0 20px;
+      border-radius: 10px;
+      object-fit: cover;
+
+      &:hover {
+        filter: brightness(100%);
+        border: 4px solid var(--Orange);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    display: none;
+  }
+}
+
+.modalContainerHidden {
+  display: none;
+}
