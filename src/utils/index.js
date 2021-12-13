@@ -32,7 +32,12 @@ export const imagesThumbnail = {
   image04,
 };
 
-export const imagesBackground = [image11, image22, image33, image44];
+export const imagesBackground = {
+  image11,
+  image22,
+  image33,
+  image44,
+};
 
 export const icons = {
   cart: cartIcon,

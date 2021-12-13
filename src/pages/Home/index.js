@@ -2,19 +2,13 @@ import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { MyContext } from "../../context/MyContext";
-import { imagesThumbnail, icons } from "../../utils";
+import { imagesThumbnail, imagesBackground, icons } from "../../utils";
 
 import styles from "./styles.module.scss";
 
 function Home() {
-  const {
-    itemCount,
-    plusProduct,
-    lessProduct,
-    images,
-    handleImages,
-    addToCart,
-  } = useContext(MyContext);
+  const { images, itemCount, plusProduct, lessProduct, setImages, addToCart } =
+    useContext(MyContext);
 
   return (
     <main className={styles.mainContainer}>
@@ -27,14 +21,26 @@ function Home() {
         <img src={images} alt="Imagem" />
 
         <div className={styles.outerProduction}>
-          <img src={imagesThumbnail.image01} alt="Products" />
           <img
-            onClick={handleImages}
+            onClick={() => setImages(imagesBackground.image11)}
+            src={imagesThumbnail.image01}
+            alt="Products"
+          />
+          <img
+            onClick={() => setImages(imagesBackground.image22)}
             src={imagesThumbnail.image02}
             alt="Products"
           />
-          <img src={imagesThumbnail.image03} alt="Products" />
-          <img src={imagesThumbnail.image04} alt="Products" />
+          <img
+            onClick={() => setImages(imagesBackground.image33)}
+            src={imagesThumbnail.image03}
+            alt="Products"
+          />
+          <img
+            onClick={() => setImages(imagesBackground.image44)}
+            src={imagesThumbnail.image04}
+            alt="Products"
+          />
         </div>
       </div>
 
