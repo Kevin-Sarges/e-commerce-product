@@ -31,22 +31,22 @@ function Home() {
 
         <div className={styles.outerProduction}>
           <img
-            onClick={() => setImages(imagesBackground.image11)}
+            onClick={() => setImages(imagesBackground[0])}
             src={imagesThumbnail.image01}
             alt="Products"
           />
           <img
-            onClick={() => setImages(imagesBackground.image22)}
+            onClick={() => setImages(imagesBackground[1])}
             src={imagesThumbnail.image02}
             alt="Products"
           />
           <img
-            onClick={() => setImages(imagesBackground.image33)}
+            onClick={() => setImages(imagesBackground[2])}
             src={imagesThumbnail.image03}
             alt="Products"
           />
           <img
-            onClick={() => setImages(imagesBackground.image44)}
+            onClick={() => setImages(imagesBackground[3])}
             src={imagesThumbnail.image04}
             alt="Products"
           />

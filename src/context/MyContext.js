@@ -13,13 +13,14 @@ export const MyContext = createContext({
 });
 
 export function MyProvider({ children }) {
-  const [images, setImages] = useState(imagesBackground.image11);
+  const [images, setImages] = useState(imagesBackground[0]);
   const [activeModal, setActiveModal] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
   const [activeCart, setActiveCart] = useState(false);
   const [itemCount, setItemCount] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
+  const [t, setT] = useState([imagesBackground]);
 
   function toggleModeModal() {
     setActiveModal(!activeModal);
@@ -58,6 +59,10 @@ export function MyProvider({ children }) {
     setAddedToCart(false);
   }
 
+  function teste() {
+    console.log(setT(t[0]));
+  }
+
   const cartContext = {
     images,
     activeModal,
@@ -74,6 +79,8 @@ export function MyProvider({ children }) {
     lessProduct: removeItemHandler,
     deleteItem: deleteItemHandler,
     addToCart: addToCartHandler,
+
+    teste,
   };
 
   return (
