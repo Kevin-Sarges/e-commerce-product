@@ -5,8 +5,14 @@ import { MyContext } from "../../context/MyContext";
 import styles from "./styles.module.scss";
 
 function ModalImages() {
-  const { images, setImages, activeModal, toggleModeModal, teste } =
-    useContext(MyContext);
+  const {
+    images,
+    setImages,
+    activeModal,
+    toggleModeModal,
+    nextImage,
+    previousImage,
+  } = useContext(MyContext);
 
   return (
     <div
@@ -21,8 +27,8 @@ function ModalImages() {
         alt="Fechar"
       />
       <div className={styles.arrowModal}>
-        <img src={icons.previous} alt="Imagem" />
-        <img onClick={teste} src={icons.next} alt="Imagem" />
+        <img onClick={previousImage} src={icons.previous} alt="Imagem" />
+        <img onClick={nextImage} src={icons.next} alt="Imagem" />
       </div>
 
       <img id={styles.imageProduct} src={images} alt="Imagem" />

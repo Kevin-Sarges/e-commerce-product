@@ -14,13 +14,15 @@ export const MyContext = createContext({
 
 export function MyProvider({ children }) {
   const [images, setImages] = useState(imagesBackground[0]);
-  const [activeModal, setActiveModal] = useState(false);
+
+  const [itemCount, setItemCount] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
+  const [indexArrayImage, setIndexArrayImage] = useState(0);
+
   const [activeMenu, setActiveMenu] = useState(false);
   const [activeCart, setActiveCart] = useState(false);
-  const [itemCount, setItemCount] = useState(0);
+  const [activeModal, setActiveModal] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
-  const [cartTotal, setCartTotal] = useState(0);
-  const [t, setT] = useState([imagesBackground]);
 
   function toggleModeModal() {
     setActiveModal(!activeModal);
@@ -59,8 +61,24 @@ export function MyProvider({ children }) {
     setAddedToCart(false);
   }
 
-  function teste() {
-    console.log(setT(t[0]));
+  function nextImage() {
+    setIndexArrayImage(indexArrayImage + 1);
+
+    if (indexArrayImage === false || indexArrayImage >= 4) {
+      return setIndexArrayImage(0);
+    }
+
+    setImages(imagesBackground[indexArrayImage]);
+  }
+
+  function previousImage() {
+    setIndexArrayImage(indexArrayImage - 1);
+
+    if (indexArrayImage === false || indexArrayImage < 0) {
+      return setIndexArrayImage(3);
+    }
+
+    setImages(imagesBackground[indexArrayImage]);
   }
 
   const cartContext = {
@@ -79,8 +97,8 @@ export function MyProvider({ children }) {
     lessProduct: removeItemHandler,
     deleteItem: deleteItemHandler,
     addToCart: addToCartHandler,
-
-    teste,
+    nextImage,
+    previousImage,
   };
 
   return (

@@ -17,14 +17,16 @@ function Home() {
     addToCart,
     activeModal,
     toggleModeModal,
+    nextImage,
+    previousImage,
   } = useContext(MyContext);
 
   return (
     <main className={styles.mainContainer}>
       <div className={styles.products}>
         <div className={styles.arrow}>
-          <img src={icons.previous} alt="Imagem" />
-          <img src={icons.next} alt="Imagem" />
+          <img onClick={nextImage} src={icons.previous} alt="Imagem" />
+          <img onClick={previousImage} src={icons.next} alt="Imagem" />
         </div>
 
         <img onClick={toggleModeModal} src={images} alt="Imagem" />
