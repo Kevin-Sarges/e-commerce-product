@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 
 import { Button } from "../Button";
 import { MyContext } from "../../context/MyContext";
-import { icons, imagesThumbnail } from "../../utils";
+import { icons, imagesBackground } from "../../utils";
 
 import styles from "./styles.module.scss";
 
 function Cart() {
-  const { activeCart, toggleModeCart, cartTotal, deleteItem } =
+  const { activeCart, toggleModeCart, cartTotal, deleteItem, indexArrayImage } =
     useContext(MyContext);
   let numberOfItem = cartTotal;
 
@@ -33,7 +33,7 @@ function Cart() {
             <div className={styles.product}>
               <img
                 id={styles.imageProduct}
-                src={imagesThumbnail.image01}
+                src={imagesBackground[indexArrayImage]}
                 alt="product"
               />
 

@@ -53,6 +53,7 @@ export function MyProvider({ children }) {
       setAddedToCart(true);
     }
     setCartTotal(cartTotal + itemCount);
+    setImages(imagesBackground[indexArrayImage]);
     setItemCount(0);
   }
 
